@@ -29,14 +29,18 @@
   clear: right;
 }
 
-.article > img {
-  width: 180px;
-  height: 110px;
+.article > .image {
+  width: 300px;
+  height: 140px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .article > .details {
   margin: 0 30px;
-  width: auto;
+  width: 100%;
 }
 
 .article > .details > .title {
@@ -44,13 +48,16 @@
   padding: 0;
   font-size: 28px;
   float: left;
+  max-width: 600px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .article > .details > .date {
   display: flex;
   float: right;
   margin: 0;
-  margin-bottom: 35px;
   padding-top: 15px;
 }
 
@@ -60,6 +67,7 @@
   max-width: 730px;
   height: 31px;
   margin: 0;
+  margin-top: 50px;
   font-size: 15px;
   line-height: 1;
   -webkit-line-clamp: 2;
