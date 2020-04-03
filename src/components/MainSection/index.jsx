@@ -7,8 +7,8 @@ const MainSection = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    getSportArticles().then(x => setArticles(prev => [...prev, ...x]));
-    getFashionArticles().then(x => setArticles(prev => [...prev, ...x]));
+    getSportArticles().then(response => response.length > 0 && setArticles(prev => [...prev, ...response]));
+    getFashionArticles().then(response => response.length > 0 && setArticles(prev => [...prev, ...response]));
   }, []);
 
   return (
