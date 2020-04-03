@@ -3,7 +3,7 @@ import Article from '../Article';
 import SortTool from '../SortTool';
 import { getSportArticles, getFashionArticles } from '../../actions/getArticles';
 
-const MainSection = () => {
+const MainSection = ({category}) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -15,18 +15,19 @@ const MainSection = () => {
     <div className="mainSection">
       <SortTool/>
       {articles && articles.map((data) => {
-        return (
-          <Article
-            key={data.id}
-            image={data.image}
-            title={data.title}
-            description={data.preamble}
-            category={data.category}
-            date={data.date}
-          />
-        )
+        return category.includes(data.category) || category.length === 0
+        ? (
+            <Article
+              key={data.id}
+              image={data.image}
+              title={data.title}
+              description={data.preamble}
+              category={data.category}
+              date={data.date}
+            />
+          )
+        : null;
       })}
-      
     </div>
   )
 }

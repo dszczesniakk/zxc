@@ -19,8 +19,8 @@ const Filter = ({checkedOptions, onChangeOptions}) => {
       />
       <Option
         text="Sports"
-        checked={checkedOptions.includes('sports')}
-        onChange={() => onChange('sports')}
+        checked={checkedOptions.includes('sport')}
+        onChange={() => onChange('sport')}
       />
     </div>
   )
