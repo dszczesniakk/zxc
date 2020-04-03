@@ -2,13 +2,13 @@ import React from 'react';
 
 const Option = ({text, checked, onChange}) => {
   return (
-    <div>
+    <div className="option">
       <input
         type="checkbox"
         checked={checked}
         onChange={onChange}
       />
-      <label>{text}</label>
+      <p>{text}</p>
     </div>
   )
 }

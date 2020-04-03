@@ -11,7 +11,7 @@ const Filter = ({checkedOptions, onChangeOptions}) => {
 
   return (
     <div className="filter">
-      <h3>Data Sources</h3>
+      <h3>Data sources</h3>
       <Option
         text="Fashion"
         checked={checkedOptions.includes('fashion')}
