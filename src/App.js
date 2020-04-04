@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Filter from './components/Filter';
 import MainSection from './components/MainSection';
-import './styles.css'
+import './styles.scss'
 
 const App = () => {
   const [category, setCategory] = useState([]);

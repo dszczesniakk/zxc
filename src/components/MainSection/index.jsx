@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Article from '../Article';
 import SortTool from '../SortTool';
 import { getSportArticles, getFashionArticles } from '../../actions/getArticles';
+import { sortArticles } from '../../actions/sortArticles';
 
 const MainSection = ({category}) => {
   const [articles, setArticles] = useState([]);
+  const [order, setOrder] = useState('');
 
   useEffect(() => {
     getSportArticles().then(response => response.length > 0 && setArticles(prev => [...prev, ...response]));
@@ -13,8 +15,8 @@ const MainSection = ({category}) => {
 
   return (
     <div className="mainSection">
-      <SortTool/>
-      {articles && articles.map((data) => {
+      <SortTool onChangeOrder={(e) => setOrder(e)} order={order}/>
+      {articles && sortArticles(articles, order).map((data) => {
         return category.includes(data.category) || category.length === 0
         ? (
             <Article
