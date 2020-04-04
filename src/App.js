@@ -4,16 +4,16 @@ import MainSection from './components/MainSection';
 import './styles.scss'
 
 const App = () => {
-  const [category, setCategory] = useState([]);
+  const [filterCategory, setFilterCategory] = useState([]);
 
   return (
     <div className="app-container">
       <Filter
-        checkedOptions={category}
-        onChangeOptions={(e) => setCategory(e)}
+        checkedOptions={filterCategory}
+        onChangeOptions={(e) => setFilterCategory(e)}
       />
       <MainSection
-        category={category}
+        filterCategory={filterCategory}
       />
     </div>
   )

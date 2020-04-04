@@ -4,7 +4,7 @@ import SortTool from '../SortTool';
 import { getSportArticles, getFashionArticles } from '../../actions/getArticles';
 import { sortArticles } from '../../actions/sortArticles';
 
-const MainSection = ({category}) => {
+const MainSection = ({filterCategory}) => {
   const [articles, setArticles] = useState([]);
   const [order, setOrder] = useState('');
 
@@ -19,7 +19,7 @@ const MainSection = ({category}) => {
         && <>
             <SortTool onChangeOrder={(e) => setOrder(e)} order={order}/>
             {sortArticles(articles, order).map((data) => {
-              return category.includes(data.category) || category.length === 0
+              return filterCategory.includes(data.category) || filterCategory.length === 0
               ? (
                   <Article
                     key={data.id}
