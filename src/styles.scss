@@ -30,7 +30,7 @@
   position: relative;
 }
 .article > .details {
-  margin: 0 30px;
+  margin: 0 0 0 30px;
   width: 100%;
 }
 .article > .details > .title {
@@ -169,8 +169,12 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 590px) {
   .mainSection > .sortTool {
-    margin: 0 30px 45px 0;
+    margin: 0 0 45px 30px;
+  }
+
+  .article > .details > .title {
+    max-width: 210px;
   }
 }

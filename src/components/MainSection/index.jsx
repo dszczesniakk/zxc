@@ -15,21 +15,25 @@ const MainSection = ({category}) => {
 
   return (
     <div className="mainSection">
-      <SortTool onChangeOrder={(e) => setOrder(e)} order={order}/>
-      {articles && sortArticles(articles, order).map((data) => {
-        return category.includes(data.category) || category.length === 0
-        ? (
-            <Article
-              key={data.id}
-              image={data.image}
-              title={data.title}
-              description={data.preamble}
-              category={data.category}
-              date={data.date}
-            />
-          )
-        : null;
-      })}
+      {articles.length > 0
+        && <>
+            <SortTool onChangeOrder={(e) => setOrder(e)} order={order}/>
+            {sortArticles(articles, order).map((data) => {
+              return category.includes(data.category) || category.length === 0
+              ? (
+                  <Article
+                    key={data.id}
+                    image={data.image}
+                    title={data.title}
+                    description={data.preamble}
+                    category={data.category}
+                    date={data.date}
+                  />
+                )
+              : null
+            })}
+        </>
+    }
     </div>
   )
 }
